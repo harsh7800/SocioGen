@@ -1,0 +1,55 @@
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  transform: scale(0.8);
+  padding: 0;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.menu-bar {
+  width: 35px;
+  height: 3px;
+  background: black;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.menu-bar1 {
+  margin-top: 17px;
+}
+
+.menu-bar3 {
+  margin-top: 30px;
+}
+
+.menu-icon.hovered .menu-bar1 {
+  width: 50px;
+  transform: rotate(45deg) scaleX(0.7);
+  margin-top: 22px;
+  height: 4px;
+  border-radius: 25px;
+  background: red;
+}
+
+
+.menu-icon.hovered .menu-bar3 {
+  background: red;
+  border-radius: 25px;
+  transform: rotate(-45deg) scaleX(0.7);
+  margin-top: 22px;
+  width: 50px;
+  height: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-con {
+    min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .menu-con {
+    min-width: 100%;
+  }
+}

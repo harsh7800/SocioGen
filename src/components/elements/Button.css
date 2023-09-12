@@ -1,0 +1,95 @@
+.Btn-1 {
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: .4s;
+      cursor: pointer;
+      position: relative;
+      background: #f09433;
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+      overflow: hidden;
+}
+
+.Btn-2 {
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: .4s;
+      cursor: pointer;
+      position: relative;
+      background: #f09433;
+      background-color: #045de9;
+      background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+      overflow: hidden;
+}
+
+.Btn-3 {
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: .4s;
+      cursor: pointer;
+      position: relative;
+      /* background: #f09433; */
+      /* background: linear-gradient(-120deg, #7289da, #99aab5, #2c2f33, #23272a); */
+      background-color: #404EED;
+
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+      overflow: hidden;
+}
+
+
+.svgIcon {
+      transition-duration: .3s;
+      fill: white !important;
+
+}
+
+
+.text {
+      position: absolute;
+      color: rgb(255, 255, 255);
+      width: 120px;
+      font-weight: 600;
+      opacity: 0;
+      transition-duration: .4s;
+}
+
+.Btn-1:hover,
+.Btn-2:hover,
+.Btn-3:hover {
+      width: 110px;
+      transition-duration: .4s;
+      border-radius: 30px;
+}
+
+.Btn-1:hover .text,
+.Btn-2:hover .text,
+.Btn-3:hover .text {
+      opacity: 1;
+      transition-duration: .4s;
+}
+
+.Btn-1:hover #svgIcon,
+.Btn-2:hover #svgIcon,
+.Btn-3:hover #svgIcon {
+      opacity: 0;
+      transition-duration: .3s;
+}
