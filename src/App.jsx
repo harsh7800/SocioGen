@@ -289,7 +289,6 @@ const SocialHandles = () => {
   const { socials } = useContext(Context);
   return (
     <Flex
-      opacity="1"
       ref={socials}
       direction="column"
       justify="center"
@@ -301,14 +300,14 @@ const SocialHandles = () => {
       zIndex="1000"
     >
       <Btn
-        link="www.sixpep.com"
+        // link="www.sixpep.com"
         className="Btn-1"
         svg="instagram"
         name="instagram"
       />
 
       <Btn
-        link="www.sixpep.com"
+        // link="www.sixpep.com"
         className="Btn-2"
         name="Twitter"
         svg="twitter"
