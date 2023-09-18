@@ -56,8 +56,8 @@ const Home = () => {
     <Flex
       px={{ base: "0", lg: "5em" }}
       border="2px solid black"
-      h={{ base: "100vh", lg: "100vh" }}
-      minH="750px"
+      h={{ base: "100vh", lg: "100dvh" }}
+      minH="700px"
       w="100svw"
       position="relative"
       pt={{ base: "6em", lg: "0" }}
