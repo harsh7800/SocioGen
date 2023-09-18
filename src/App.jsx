@@ -87,10 +87,7 @@ function App() {
             delay: 0.5,
             top: "-100%",
             ease: "power3.in",
-            stagger: 0.3,
-            scrollTrigger: {
-              trigger: overlayRef.current,
-            },
+            stagger: 0.2,
           }
         )
         .fromTo(
