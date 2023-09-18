@@ -31,7 +31,7 @@ const Home = () => {
   const handleScrollToAbout = (ref) => {
     const yOffset = -70; // Adjust this value as needed for the desired offset
     const y =
-      ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      ref.current.getBoundingClientRect().top + window.scrollY + yOffset;
 
     window.scrollTo({
       top: y,
@@ -120,11 +120,8 @@ const Home = () => {
           fontWeight="700"
           fontFamily="Manrope"
           mt="1em"
-          // color="rgba(255 255 255, .7)"
           px={{ base: "1em", md: "0" }}
           opacity={{ base: 0.7, lg: 1 }}
-
-          // fontSize="1.5vw"
         >
           Crafting Custom web Solutions with Your Vision in Mind,
         </Text>
@@ -185,7 +182,6 @@ const Home = () => {
         src={Banner}
         maxW={{ base: "auto", md: "400px", lg: "450px", xl: "45em" }}
         objectFit="contain"
-        
       />
       <EmailModal isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
     </Flex>
@@ -196,8 +192,11 @@ export default Home;
 
 function EmailModal({ isOpen, onClose }) {
   const [phoneEmail, setphoneEmail] = useState("");
+  const [name, setName] = useState("");
+
   const emailContents = {
     Phone_Email: phoneEmail,
+    name: name,
   };
   const sendEmail = (e) => {
     e.preventDefault();
@@ -212,7 +211,6 @@ function EmailModal({ isOpen, onClose }) {
         () => {
           onClose();
           alert("Messaage Sent Successfully");
-          // window.location.reload();
         },
         (error) => {
           alert(error.text);
@@ -239,7 +237,7 @@ function EmailModal({ isOpen, onClose }) {
             fontFamily="Manrope"
             textTransform="capitalize"
           >
-            Let us reach you out
+            Allow Us to Connect with You
           </ModalHeader>
           <ModalBody overflow="visible" pb={6}>
             <Flex
@@ -250,6 +248,16 @@ function EmailModal({ isOpen, onClose }) {
               justify="center"
               align="center"
             >
+              <Input
+                isRequired
+                value={name}
+                type="email"
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter Your Name"
+                size="lg"
+                inputMode="text"
+                _placeholder={{ fontFamily: "Manrope", fontSize: ".9em" }}
+              />
               <Input
                 isRequired
                 value={phoneEmail}
@@ -285,7 +293,7 @@ function EmailModal({ isOpen, onClose }) {
                   _hover={{ transform: "scale(.95)" }}
                   w={{ base: "100%" }}
                 >
-                  Later
+                  Cancel
                 </Button>
               </Flex>
               <Text
