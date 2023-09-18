@@ -52,11 +52,7 @@ function App() {
     window.onload = () => {
       setloading(false); // Set loading to false to trigger the animation
 
-      const timeLine = gsap.timeline({
-        scrollTrigger: {
-          trigger: overlayRef.current,
-        },
-      });
+      const timeLine = gsap.timeline({});
 
       const scroll = timeLine
         .to(name1.current, {
