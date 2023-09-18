@@ -86,7 +86,7 @@ const Process = () => {
           w: "65px",
           h: "5px",
           borderRadius: "25px",
-          bottom: "0",
+          bottom: "-5%",
           left: "0",
         }}
         textAlign="left"

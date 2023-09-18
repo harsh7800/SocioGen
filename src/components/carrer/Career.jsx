@@ -76,7 +76,7 @@ const Career = () => {
       <Text
         ref={careerTitle}
         w="100svw"
-        ml={{ base: "3em", md: "4.5em" }}
+        ml={{ base: "1em", md: "4.5em" }}
         fontSize={{ base: "1.3em", sm: "", lg: "1.5em", xl: "2em" }}
         fontFamily="Roboto"
         fontWeight="500"
@@ -88,7 +88,7 @@ const Career = () => {
           w: "65px",
           h: "5px",
           borderRadius: "25px",
-          bottom: "0",
+          bottom: "-5%",
           left: "0",
         }}
         textAlign="left"
