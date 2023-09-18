@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <Flex
       px={{ base: "0", lg: "5em" }}
-      border="2px solid black"
+      // border="2px solid black"
       h={{ base: "100vh", lg: "100dvh" }}
       minH="700px"
       w="100svw"
@@ -160,7 +160,7 @@ const Home = () => {
           marginLeft="auto;"
           marginRight="auto;"
           width="auto"
-          bottom={{ base: "5%" }}
+          bottom={{ base: "10%" }}
           overflow="visible"
           align="center"
           justify="center"
