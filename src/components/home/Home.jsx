@@ -251,7 +251,7 @@ function EmailModal({ isOpen, onClose }) {
               <Input
                 isRequired
                 value={name}
-                type="email"
+                type="text"
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter Your Name"
                 size="lg"
