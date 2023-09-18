@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./style.scss";
 import Context from "../../Context";
+import { Box } from "@chakra-ui/react";
 // import CustomCursorContext from "./context/CustomCursorContext";
 
 // TODO: Hide if cursor not moved
@@ -69,7 +70,10 @@ const CustomCursor = () => {
     followMouse();
   }, []);
   return (
-    <div className={`cursor-wrapper default`}>
+    <Box
+      display={{ base: "none", xl: "block" }}
+      className={`cursor-wrapper default`}
+    >
       {/* {!over ? (
         <div className="secondary-cursor" ref={secondaryCursor}></div>
       ) : null} */}
@@ -82,7 +86,7 @@ const CustomCursor = () => {
             : { opacity: 1, transition: "all .5s ease-in no-repeat" }
         }
       ></div>
-    </div>
+    </Box>
   );
 };
 

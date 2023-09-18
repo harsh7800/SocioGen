@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import "./App.css";
 import CustomCursor from "./components/customCursor";
 // import { Box } from "@chakra-ui/react";
@@ -35,6 +35,7 @@ function App() {
   const careerTitle = useRef();
   const name1 = useRef();
   const name2 = useRef();
+  const hamburgerRef = useRef();
   // const nameWrapper = useRef();
 
   const [loading, setloading] = useState(true);
@@ -60,7 +61,6 @@ function App() {
       const scroll = timeLine
         .to(name1.current, {
           x: 0,
-
           opacity: 1,
           delay: 1,
           ease: "Power.Out",
@@ -68,9 +68,8 @@ function App() {
         })
         .to(name2.current, {
           x: 0,
-
           opacity: 1,
-          delay: 1,
+          delay: 0.5,
           ease: "Power.Out",
           duration: 0.5,
         })
@@ -78,16 +77,14 @@ function App() {
           opacity: 0,
           ease: "Power.Out",
           duration: 0.5,
-          delay: 1,
-          transform: "scale(0)",
+          delay: 0.5,
         })
-
         .fromTo(
           overlayRef.current.children,
-          { duration: 1, delay: 1, top: 0, ease: "power3.in" },
+          { delay: 0.5, top: "0%", ease: "power3.in" },
           {
-            duration: 1,
-            delay: 1,
+            duration: 0.6,
+            delay: 0.5,
             top: "-100%",
             ease: "power3.in",
             stagger: 0.3,
@@ -100,7 +97,6 @@ function App() {
           navRef.current?.children,
           {
             opacity: 0,
-            duration: 1,
             ease: "power3.out",
             y: "-50",
           },
@@ -109,46 +105,59 @@ function App() {
             duration: 0.7,
             ease: "power3.out",
             y: "0",
-            stagger: 0.2, // Adjust the stagger value to control the spacing between each item
+            stagger: 0.1, // Adjust the stagger value to control the spacing between each item
             delay: 2,
+          }
+        )
+        .fromTo(
+          hamburgerRef.current,
+          {
+            opacity: 0,
+            ease: "power3.out",
+            y: "-50",
+          },
+          {
+            opacity: 1,
+            duration: 0.7,
+            ease: "power3.out",
+            y: "0",
           }
         )
         .fromTo(
           headingRef.current?.children,
           { opacity: 0, duration: 0.5, ease: "power3.out", y: -10 },
-          { opacity: 1, duration: 0.5, ease: "power3.out", y: 10, stagger: 0.3 }
+          { opacity: 1, duration: 0.5, ease: "power3.out", y: 10, stagger: 0.1 }
         )
         .fromTo(
           bannerImgRef.current,
           {
             opacity: 0,
-            duration: 1,
             ease: "power3.out",
             transform: "scale(0)",
           },
           {
             opacity: 1,
-            duration: 1,
+            duration: 0.5,
             ease: "power3.out",
             transform: "scale(1)",
           }
-        )
-        .fromTo(
-          socials.current?.children,
-          {
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-            y: "-100",
-          },
-          {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power1.out",
-            y: "0",
-            stagger: 1,
-          }
         );
+      // .fromTo(
+      //   socials.current?.children,
+      //   {
+      //     opacity: 0,
+      //     duration: 1,
+      //     ease: "power3.out",
+      //     y: "-100",
+      //   },
+      //   {
+      //     opacity: 1,
+      //     duration: 0.5,
+      //     ease: "power1.out",
+      //     y: "0",
+      //     stagger: 1,
+      //   }
+      // );
       return () => {
         scroll.kill();
       };
@@ -187,6 +196,7 @@ function App() {
         processTitle,
         contactTitle,
         careerTitle,
+        hamburgerRef,
       }}
     >
       <Box position="relative" ref={wrapper}>
@@ -222,7 +232,7 @@ function App() {
         </Flex> */}
         <Box ref={overlayRef}>
           <Flex
-            position="absolute"
+            position="fixed"
             zIndex="102"
             bg="black"
             w="100svw"
@@ -254,14 +264,14 @@ function App() {
             </Text>
           </Flex>
           <Box
-            position="absolute"
+            position="fixed"
             zIndex="101"
             bg="red"
             w="100svw"
             h="100dvh"
           ></Box>
           <Box
-            position="absolute"
+            position="fixed"
             zIndex="100"
             bg="white"
             w="100svw"
@@ -289,6 +299,7 @@ const SocialHandles = () => {
   const { socials } = useContext(Context);
   return (
     <Flex
+      display="none"
       ref={socials}
       direction="column"
       justify="center"

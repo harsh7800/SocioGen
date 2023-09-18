@@ -1,14 +1,31 @@
-import { Box, Button, Flex, Img, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Img,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import TextCrousel from "../elements/TextCrousel";
 import Banner from "../../assets/banner.jpg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Context from "../../Context";
+import emailjs from "emailjs-com";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { headingRef, bannerImgRef, contactTitle, aboutTitle } =
     useContext(Context);
   const handleScrollToAbout = (ref) => {
@@ -29,6 +46,12 @@ const Home = () => {
     transform: translateY(10px);
   }
 `;
+
+  useEffect(() => {
+    setTimeout(() => {
+      onOpen();
+    }, 20000);
+  }, []);
 
   return (
     <Flex
@@ -163,8 +186,129 @@ const Home = () => {
         maxW={{ base: "auto", md: "400px", lg: "450px", xl: "45em" }}
         objectFit="contain"
       />
+      <EmailModal isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
     </Flex>
   );
 };
 
 export default Home;
+
+function EmailModal({ isOpen, onOpen, onClose }) {
+  const [phoneEmail, setphoneEmail] = useState("");
+  const emailContents = {
+    Phone_Email: phoneEmail,
+  };
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .send(
+        "service_326pvig",
+        "template_c3xaxc3",
+        emailContents,
+        "DGyFBPxebdpPb8MEf"
+      )
+      .then(
+        () => {
+          onClose();
+          alert("Messaage Sent Successfully");
+          // window.location.reload();
+        },
+        (error) => {
+          alert(error.text);
+        }
+      );
+  };
+  return (
+    <>
+      <Modal
+        isCentered
+        closeOnOverlayClick={true}
+        isOpen={isOpen}
+        onClose={onClose}
+        size={{ base: "xs", md: "lg" }}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader
+            textAlign="center"
+            zIndex="10"
+            color="black"
+            fontSize={{ base: "1.2em", md: "1.5em" }}
+            fontWeight="700"
+            fontFamily="Manrope"
+            textTransform="capitalize"
+          >
+            Let us reach you out
+          </ModalHeader>
+          <ModalBody overflow="visible" pb={6}>
+            <Flex
+              onSubmit={sendEmail}
+              as="form"
+              gap="1em"
+              direction="column"
+              justify="center"
+              align="center"
+            >
+              <Input
+                isRequired
+                value={phoneEmail}
+                type="email"
+                onChange={(e) => setphoneEmail(e.target.value)}
+                placeholder="Email or Phone"
+                size="lg"
+                inputMode="email"
+                _placeholder={{ fontFamily: "Manrope", fontSize: ".9em" }}
+              />
+              <Flex w="100%" justify="center" align="center" gap="2em">
+                <Button
+                  value="Send"
+                  type="submit"
+                  fontFamily="Poppins"
+                  borderRadius="10px"
+                  bg="red.500"
+                  color="white"
+                  _hover={{ transform: "scale(.95)" }}
+                  w={{ base: "100%" }}
+                >
+                  Submit
+                </Button>
+                <Button
+                  value="Send"
+                  type="submit"
+                  fontFamily="Poppins"
+                  borderRadius="10px"
+                  border="2px solid red"
+                  bg="white"
+                  color="black"
+                  onClick={() => onClose()}
+                  _hover={{ transform: "scale(.95)" }}
+                  w={{ base: "100%" }}
+                >
+                  Later
+                </Button>
+              </Flex>
+              <Text
+                display={
+                  /^\d{10}$/.test(phoneEmail) ||
+                  (/.+@.+\..+/.test(phoneEmail) && phoneEmail.endsWith(".com"))
+                    ? "none"
+                    : phoneEmail === ""
+                    ? "none"
+                    : "block"
+                }
+                zIndex="10"
+                color="red"
+                fontSize="1em"
+                textAlign="left"
+                fontWeight="700"
+                fontFamily="Manrope"
+              >
+                Enter a valid Email or phone number
+              </Text>
+            </Flex>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}

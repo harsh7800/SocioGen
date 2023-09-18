@@ -1,8 +1,9 @@
 import "./hamburgerAnimation.css";
 import PropTypes from "prop-types";
-const HamburgerAnimation = ({ hover, setHover }) => {
+const HamburgerAnimation = ({ ref, hover, setHover }) => {
   return (
     <div
+      ref={ref}
       className={`menu-icon ${hover ? "hovered" : ""}`}
       onClick={() => {
         setHover(!hover);
@@ -19,4 +20,5 @@ export default HamburgerAnimation;
 HamburgerAnimation.propTypes = {
   hover: PropTypes.bool.isRequired,
   setHover: PropTypes.bool.isRequired,
+  ref: PropTypes.element.isRequired,
 };

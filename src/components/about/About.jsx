@@ -33,7 +33,6 @@ const About = () => {
       aboutTitle.current,
       {
         opacity: 0,
-        duration: 1,
         ease: "power3.out",
         y: "-50",
       },
@@ -52,13 +51,12 @@ const About = () => {
       subHeading.current,
       {
         opacity: 0,
-        duration: 1,
         ease: "power3.out",
         y: "-50",
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         y: "0",
         scrollTrigger: {
@@ -78,7 +76,7 @@ const About = () => {
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         y: "0",
         scrollTrigger: {
@@ -86,7 +84,7 @@ const About = () => {
           start: "100 550",
         },
         delay: 0.5,
-        stagger: 0.3,
+        stagger: 0.2,
       }
     );
   }, [aboutTitle, subHeading, keyFeaturesRef]);
@@ -150,7 +148,7 @@ const About = () => {
         justifyItems="center"
         w="95svw"
         overflow="visible"
-        h={{ base: "auto", lg: "20em" }}
+        h={{ base: "auto", lg: "fit-content" }}
         // spacing="1em"
         // overflow="visible"
         userSelect="none"

@@ -22,39 +22,38 @@ const Services = () => {
       servicesTitle.current,
       {
         opacity: 0,
-        duration: 1,
         ease: "power3.out",
         y: "-50",
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         y: "0",
         scrollTrigger: {
           trigger: servicesTitle.current,
           start: "100 600",
         },
+        delay: 0.5,
       }
     );
     gsap.fromTo(
       subHeading.current,
       {
         opacity: 0,
-        duration: 1,
         ease: "power3.out",
         y: "-50",
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         y: "0",
         scrollTrigger: {
           trigger: subHeading.current,
           start: "100 600",
         },
-        delay: 0.5,
+        delay: 1,
       }
     );
     gsap.fromTo(

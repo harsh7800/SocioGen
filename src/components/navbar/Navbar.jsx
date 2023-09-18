@@ -16,6 +16,7 @@ const Navbar = () => {
     servicesTitle,
     contactTitle,
     processTitle,
+    hamburgerRef,
   } = useContext(Context);
 
   const handleScrollToAbout = (ref) => {
@@ -27,6 +28,7 @@ const Navbar = () => {
       top: y,
       behavior: "smooth",
     });
+    setShow(false);
   };
 
   return (
@@ -108,7 +110,11 @@ const Navbar = () => {
       ) : null}
       {!isLargerThan900 ? (
         <Box onClick={() => setShow(!show)}>
-          <HamburgerAnimation hover={show} setHover={setShow} />
+          <HamburgerAnimation
+            ref={hamburgerRef}
+            hover={show}
+            setHover={setShow}
+          />
         </Box>
       ) : null}
       <Flex
@@ -126,7 +132,7 @@ const Navbar = () => {
         <Flex
           direction="column"
           gap="2em"
-          pl="1em"
+          pl="2em"
           position="relative"
           w="100svw"
         >

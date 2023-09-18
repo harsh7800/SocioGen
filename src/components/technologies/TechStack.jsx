@@ -24,6 +24,7 @@ const TechStack = () => {
   const interestRef = useRef();
   const { careerTitle } = useContext(Context);
   const techRef = useRef();
+  const techRefTitle = useRef();
   const whyref = useRef();
 
   useEffect(() => {
@@ -44,28 +45,27 @@ const TechStack = () => {
           trigger: interestRef.current,
           start: "100 600",
         },
-        stagger: 0.3,
+        stagger: 0.1,
         delay: 0.5,
       }
     );
     gsap.fromTo(
-      careerTitle.current,
+      techRefTitle.current,
       {
         opacity: 0,
-        duration: 1,
         ease: "power3.out",
         y: "-50",
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.7,
         ease: "power3.out",
         y: "0",
         scrollTrigger: {
-          trigger: careerTitle.current,
+          trigger: interestRef.current,
           start: "100 600",
         },
-        delay: 0.5,
+        delay: 1,
       }
     );
     gsap.fromTo(
@@ -85,7 +85,7 @@ const TechStack = () => {
           trigger: techRef.current,
           start: "100 600",
         },
-        stagger: 0.3,
+        stagger: 0.1,
         delay: 0.5,
       }
     );
@@ -143,7 +143,7 @@ const TechStack = () => {
       <Flex align="center" justify="space-between" direction="column" mt="5em">
         <Text
           textAlign="center"
-          ref={careerTitle}
+          ref={techRefTitle}
           fontSize="30px"
           fontWeight="700"
         >

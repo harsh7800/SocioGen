@@ -9,7 +9,6 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import Btn from "../elements/Btn";
 import Contact_illustration from "../../assets/form_illustration.jpg";
 import { useMediaQuery } from "@chakra-ui/react";
 import gsap from "gsap";
@@ -64,7 +63,7 @@ const Contact = () => {
           // window.location.reload();
         },
         (error) => {
-          console.log(error.text);
+          alert(error.text);
         }
       );
     form.current.reset();
@@ -104,10 +103,9 @@ const Contact = () => {
         ease: "power3.out",
         y: "0",
         scrollTrigger: {
-          trigger: ImageRef.current,
+          trigger: contactTitle.current,
           start: "100 600",
         },
-        stagger: 0.3,
         delay: 1,
       }
     );
@@ -133,7 +131,7 @@ const Contact = () => {
           ease: "power3.out",
           y: "0",
 
-          stagger: 0.3,
+          stagger: 0.1,
           delay: 2,
         }
       )
@@ -150,7 +148,7 @@ const Contact = () => {
           duration: 1,
           ease: "power3.out",
           y: "0",
-          stagger: 0.3,
+          stagger: 0.1,
         }
       )
       .fromTo(
@@ -166,54 +164,39 @@ const Contact = () => {
           duration: 1,
           ease: "power3.out",
           y: "0",
-          stagger: 0.3,
+          stagger: 0.1,
         }
-      );
-
-    gsap.fromTo(
-      branding.current?.children,
-      {
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        y: "-50",
-      },
-      {
-        opacity: 0.3,
+      )
+      .to(button.current, {
         duration: 1,
         ease: "power3.out",
         y: "0",
-        scrollTrigger: {
-          trigger: branding.current,
-          start: "100 600",
+        opacity: 1,
+      })
+      .fromTo(
+        branding.current?.children,
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          y: "-50",
         },
-        stagger: 0.1,
-        delay: 1,
-      }
-    );
-    gsap.fromTo(
-      button.current,
-      {
-        duration: 1,
-        ease: "power3.out",
-        y: "-50",
-      },
-      {
-        duration: 1,
-        ease: "power3.out",
-        y: "5",
-        scrollTrigger: {
-          trigger: button.current,
-          start: "100 600",
-        },
-      }
-    );
+        {
+          opacity: 0.3,
+          duration: 1,
+          ease: "power3.out",
+          y: "0",
+          stagger: 0.1,
+          delay: 1,
+        }
+      );
   }, [contactTitle, ImageRef, subheadingRef]);
   return (
     <Box
       justify="center"
       align="center"
       w="100svw"
+      h="fit-content"
       position="relative"
       bg="black"
       mt="2em"
@@ -245,7 +228,7 @@ const Contact = () => {
       <Flex
         mt="3em"
         w={isLargerThan1000 ? "80svw" : "95svw"}
-        h="40em"
+        h={{ base: "fit-content", lg: "40em" }}
         justify="center"
         align="center"
         // border="2px solid red"
@@ -265,11 +248,11 @@ const Contact = () => {
             overflow="visible"
           >
             <Img w={{ base: "25em", lg: "30em" }} src={Contact_illustration} />
-            <Flex gap="2em" overflow="visible">
+            {/* <Flex gap="2em" overflow="visible">
               <Btn className="Btn-1" svg="instagram" name="instagram" />
               <Btn className="Btn-2" name="Twitter" svg="twitter" />
               <Btn className="Btn-3" name="Discord" svg="discord" />
-            </Flex>
+            </Flex> */}
           </Flex>
         ) : null}
         <Flex
@@ -277,7 +260,8 @@ const Contact = () => {
           ref={form}
           onSubmit={sendEmail}
           direction="column"
-          h="40em"
+          h={{ base: "fit-content", lg: "40em" }}
+          py={{ base: "2em", lg: "0" }}
           align="center"
           justify="center"
           overflow="visible"
@@ -298,44 +282,50 @@ const Contact = () => {
             align="center"
             ref={nameRef}
           >
-            <InputGroup alignItems="center">
+            <InputGroup alignItems="center" overflow="visible">
               <InputLeftAddon h="3em" bg="none" borderRight="none">
                 {profile}
               </InputLeftAddon>
               <Input
+                isRequired
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="First Name"
                 size="lg"
                 borderLeft="none"
                 _placeholder={{ fontFamily: "Manrope" }}
+                inputMode="text"
               />
             </InputGroup>
-            <InputGroup alignItems="center">
+            <InputGroup alignItems="center" overflow="visible">
               <InputLeftAddon h="3em" bg="none" borderRight="none">
                 {profile}
               </InputLeftAddon>
               <Input
+                isRequired
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Last Name"
                 size="lg"
                 borderLeft="none"
                 _placeholder={{ fontFamily: "Manrope" }}
+                inputMode="text"
               />
             </InputGroup>
           </Flex>
-          <InputGroup alignItems="center" ref={emailRef}>
+          <InputGroup alignItems="center" ref={emailRef} overflow="visible">
             <InputLeftAddon h="3em" bg="none" borderRight="none">
               {email}
             </InputLeftAddon>
             <Input
+              isRequired
               value={Email}
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               size="lg"
               borderLeft="none"
+              inputMode="email"
               _placeholder={{ fontFamily: "Manrope" }}
             />
           </InputGroup>
@@ -354,11 +344,12 @@ const Contact = () => {
           >
             Enter a valid Email
           </Text>
-          <InputGroup alignItems="center" ref={PhoneRef}>
+          <InputGroup alignItems="center" ref={PhoneRef} overflow="visible">
             <InputLeftAddon h="3em" bg="none" borderRight="none">
               {phone}
             </InputLeftAddon>
             <Input
+              isRequired
               type="number"
               value={phoneNum}
               onChange={(e) => setPhoneNum(e.target.value)}
@@ -366,6 +357,7 @@ const Contact = () => {
               size="lg"
               borderLeft="none"
               _placeholder={{ fontFamily: "Manrope" }}
+              inputMode="numeric"
             />
           </InputGroup>
           <Text
@@ -386,6 +378,7 @@ const Contact = () => {
             {phoneNum.length === 10 ? "" : "Enter a valid number"}
           </Text>
           <Textarea
+            overflow="visible"
             ref={msgRef}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -393,9 +386,11 @@ const Contact = () => {
             position="relative"
             // position="absolute"
             h="10em"
+            inputMode="text"
             opacity=".5"
             fontFamily="Manrope"
-            placeholder="PLease describe your need"
+            placeholder="Please describe your need"
+            isRequired
           />
           <Button
             isDisabled={
@@ -413,6 +408,15 @@ const Contact = () => {
             color="white"
             _hover={{ transform: "scale(1.2)" }}
             ref={button}
+            opacity={
+              firstName === "" ||
+              lastName === "" ||
+              message === "" ||
+              email === "" ||
+              !Email.endsWith(".com")
+                ? 0.5
+                : 1
+            }
           >
             Submit
           </Button>
