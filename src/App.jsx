@@ -49,108 +49,108 @@ function App() {
   //   requestAnimationFrame(raf);
   // }, []);
   useEffect(() => {
-    window.onload = () => {
-      setloading(false); // Set loading to false to trigger the animation
+    // window.onload = () => {
+    setloading(false); // Set loading to false to trigger the animation
 
-      const timeLine = gsap.timeline({});
+    const timeLine = gsap.timeline({});
 
-      const scroll = timeLine
-        .to(name1.current, {
-          x: 0,
-          opacity: 1,
-          delay: 1,
-          ease: "Power.Out",
-          duration: 0.5,
-        })
-        .to(name2.current, {
-          x: 0,
-          opacity: 1,
-          delay: 0.5,
-          ease: "Power.Out",
-          duration: 0.5,
-        })
-        .to([name1.current, name2.current], {
+    const scroll = timeLine
+      .to(name1.current, {
+        x: 0,
+        opacity: 1,
+        delay: 1,
+        ease: "Power.Out",
+        duration: 0.5,
+      })
+      .to(name2.current, {
+        x: 0,
+        opacity: 1,
+        delay: 0.5,
+        ease: "Power.Out",
+        duration: 0.5,
+      })
+      .to([name1.current, name2.current], {
+        opacity: 0,
+        ease: "Power.Out",
+        duration: 0.5,
+        delay: 0.5,
+      })
+      .to(overlayRef.current.children, {
+        duration: 0.6,
+        delay: 0.5,
+        top: "-100%",
+        ease: "power3.in",
+        stagger: 0.2,
+      })
+      .fromTo(
+        navRef.current?.children,
+        {
           opacity: 0,
-          ease: "Power.Out",
+          ease: "power3.out",
+          y: "-50",
+        },
+        {
+          opacity: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          y: "0",
+          stagger: 0.1, // Adjust the stagger value to control the spacing between each item
+          delay: 2,
+        }
+      )
+      .fromTo(
+        hamburgerRef.current,
+        {
+          opacity: 0,
+          ease: "power3.out",
+          y: "-50",
+        },
+        {
+          opacity: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          y: "0",
+        }
+      )
+      .fromTo(
+        headingRef.current?.children,
+        { opacity: 0, duration: 0.5, ease: "power3.out", y: -10 },
+        { opacity: 1, duration: 0.5, ease: "power3.out", y: 10, stagger: 0.1 }
+      )
+      .fromTo(
+        bannerImgRef.current,
+        {
+          opacity: 0,
+          ease: "power3.out",
+          transform: "scale(0)",
+        },
+        {
+          opacity: 1,
           duration: 0.5,
-          delay: 0.5,
-        })
-        .to(overlayRef.current.children, {
-          duration: 0.6,
-          delay: 0.5,
-          top: "-100%",
-          ease: "power3.in",
-          stagger: 0.2,
-        })
-        .fromTo(
-          navRef.current?.children,
-          {
-            opacity: 0,
-            ease: "power3.out",
-            y: "-50",
-          },
-          {
-            opacity: 1,
-            duration: 0.7,
-            ease: "power3.out",
-            y: "0",
-            stagger: 0.1, // Adjust the stagger value to control the spacing between each item
-            delay: 2,
-          }
-        )
-        .fromTo(
-          hamburgerRef.current,
-          {
-            opacity: 0,
-            ease: "power3.out",
-            y: "-50",
-          },
-          {
-            opacity: 1,
-            duration: 0.7,
-            ease: "power3.out",
-            y: "0",
-          }
-        )
-        .fromTo(
-          headingRef.current?.children,
-          { opacity: 0, duration: 0.5, ease: "power3.out", y: -10 },
-          { opacity: 1, duration: 0.5, ease: "power3.out", y: 10, stagger: 0.1 }
-        )
-        .fromTo(
-          bannerImgRef.current,
-          {
-            opacity: 0,
-            ease: "power3.out",
-            transform: "scale(0)",
-          },
-          {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power3.out",
-            transform: "scale(1)",
-          }
-        );
-      // .fromTo(
-      //   socials.current?.children,
-      //   {
-      //     opacity: 0,
-      //     duration: 1,
-      //     ease: "power3.out",
-      //     y: "-100",
-      //   },
-      //   {
-      //     opacity: 1,
-      //     duration: 0.5,
-      //     ease: "power1.out",
-      //     y: "0",
-      //     stagger: 1,
-      //   }
-      // );
-      return () => {
-        scroll.kill();
-      };
+          ease: "power3.out",
+          transform: "scale(1)",
+        }
+      );
+    // .fromTo(
+    //   socials.current?.children,
+    //   {
+    //     opacity: 0,
+    //     duration: 1,
+    //     ease: "power3.out",
+    //     y: "-100",
+    //   },
+    //   {
+    //     opacity: 1,
+    //     duration: 0.5,
+    //     ease: "power1.out",
+    //     y: "0",
+    //     stagger: 1,
+    //   }
+    // );
+    return () => {
+      scroll.kill();
     };
+    // };
   }, [loading]);
   // useEffect(() => {
   //   const handleMouseMove = (e) => {
@@ -256,13 +256,6 @@ function App() {
             position="fixed"
             zIndex="101"
             bg="red"
-            w="100svw"
-            h="100dvh"
-          ></Box>
-          <Box
-            position="fixed"
-            zIndex="100"
-            bg="white"
             w="100svw"
             h="100dvh"
           ></Box>
