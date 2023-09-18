@@ -185,6 +185,7 @@ const Home = () => {
         src={Banner}
         maxW={{ base: "auto", md: "400px", lg: "450px", xl: "45em" }}
         objectFit="contain"
+        
       />
       <EmailModal isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
     </Flex>
