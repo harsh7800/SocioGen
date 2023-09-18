@@ -13,6 +13,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
+import PropTypes from "prop-types";
 import TextCrousel from "../elements/TextCrousel";
 import Banner from "../../assets/banner.jpg";
 import { gsap } from "gsap";
@@ -192,7 +193,7 @@ const Home = () => {
 
 export default Home;
 
-function EmailModal({ isOpen, onOpen, onClose }) {
+function EmailModal({ isOpen, onClose }) {
   const [phoneEmail, setphoneEmail] = useState("");
   const emailContents = {
     Phone_Email: phoneEmail,
@@ -311,3 +312,9 @@ function EmailModal({ isOpen, onOpen, onClose }) {
     </>
   );
 }
+
+EmailModal.propTypes = {
+  onOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.bool.isRequired,
+};
