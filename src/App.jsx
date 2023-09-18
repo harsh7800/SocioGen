@@ -79,17 +79,13 @@ function App() {
           duration: 0.5,
           delay: 0.5,
         })
-        .fromTo(
-          overlayRef.current.children,
-          { delay: 0.5, top: "0%", ease: "power3.in" },
-          {
-            duration: 0.6,
-            delay: 0.5,
-            top: "-100%",
-            ease: "power3.in",
-            stagger: 0.2,
-          }
-        )
+        .to(overlayRef.current.children, {
+          duration: 0.6,
+          delay: 0.5,
+          top: "-100%",
+          ease: "power3.in",
+          stagger: 0.2,
+        })
         .fromTo(
           navRef.current?.children,
           {
@@ -231,6 +227,8 @@ function App() {
           <Flex
             position="fixed"
             zIndex="102"
+            top="0%"
+            left="0%"
             bg="black"
             w="100svw"
             h="100dvh"
@@ -263,6 +261,8 @@ function App() {
           <Box
             position="fixed"
             zIndex="101"
+            top="0%"
+            left="0%"
             bg="red"
             w="100svw"
             h="100dvh"
@@ -270,6 +270,8 @@ function App() {
           <Box
             position="fixed"
             zIndex="100"
+            top="0%"
+            left="0%"
             bg="white"
             w="100svw"
             h="100dvh"
