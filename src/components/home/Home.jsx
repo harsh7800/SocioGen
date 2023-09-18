@@ -160,7 +160,7 @@ const Home = () => {
           marginLeft="auto;"
           marginRight="auto;"
           width="auto"
-          bottom={{ base: "10%" }}
+          bottom={{ base: "5%" }}
           overflow="visible"
           align="center"
           justify="center"
