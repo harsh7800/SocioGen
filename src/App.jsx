@@ -223,8 +223,6 @@ function App() {
           <Flex
             position="fixed"
             zIndex="102"
-            top="0%"
-            left="0%"
             bg="black"
             w="100svw"
             h="100dvh"
@@ -257,8 +255,6 @@ function App() {
           <Box
             position="fixed"
             zIndex="101"
-            top="0%"
-            left="0%"
             bg="red"
             w="100svw"
             h="100dvh"
@@ -266,8 +262,6 @@ function App() {
           <Box
             position="fixed"
             zIndex="100"
-            top="0%"
-            left="0%"
             bg="white"
             w="100svw"
             h="100dvh"
