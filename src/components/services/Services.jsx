@@ -152,27 +152,22 @@ const Services = () => {
             reverse={true}
             img={mobile_illustration}
             skill="Mobile Applications"
-            description=" Immerse your audience with our parallax websites featuring smooth
-          animations, creating captivating user experiences that leave a lasting
-          impression."
+            description="Elevate your mobile experience with our expert mobile app development services. From productivity tools to entertainment, our apps cater to your unique needs. Seamlessly integrate innovation into your daily life with us."
           />
           <Card
             reverse={false}
             num="3"
             img={ui_ux_illustration}
             skill="Ui & UX Designs"
-            description=" Immerse your audience with our parallax websites featuring smooth
-          animations, creating captivating user experiences that leave a lasting
-          impression."
+            description="Transform your mobile experience with our expert mobile app development and cutting-edge UI/UX design services. From sleek interfaces to seamless interactions, we craft apps that cater to your unique needs. Seamlessly integrate innovation into your daily life with us."
           />
           <Card
             num="4"
             reverse={true}
             img={marketing_illustration}
             skill="Social Media Marketing"
-            description=" Immerse your audience with our parallax websites featuring smooth
-          animations, creating captivating user experiences that leave a lasting
-          impression."
+            description="
+Boost your brand's online presence with our expert social media marketing services. We create engaging content and strategic campaigns to connect you with your audience effectively. Elevate your digital strategy with us and achieve meaningful results."
           />
         </Flex>
       </Flex>
