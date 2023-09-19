@@ -22,6 +22,9 @@ const Contact = () => {
   const profile = <i className="fa-solid fa-user"></i>;
   const email = <i className="fa-solid fa-envelope"></i>;
   const phone = <i className="fa-solid fa-phone"></i>;
+  const whatsapp = (
+    <i className="fa-brands fa-whatsapp" style={{ color: "white" }}></i>
+  );
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   const { contactTitle } = useContext(Context);
   const ImageRef = useRef();
@@ -490,6 +493,28 @@ const Contact = () => {
         >
           N
         </Text>
+      </Flex>
+      <Flex
+        onClick={() =>
+          window.open(
+            "https://api.whatsapp.com/send/?phone=%2B918010193621&text&type=phone_number&app_absent=0",
+            "_black"
+          )
+        }
+        bg="#25D366"
+        w="50px"
+        borderRadius="50%"
+        cursor="pointer"
+        h="50px"
+        position="fixed"
+        right="3%"
+        bottom="5%"
+        fontSize="35px"
+        justify="center"
+        align="center"
+        color="#ffffff"
+      >
+        {whatsapp}
       </Flex>
     </Box>
   );
