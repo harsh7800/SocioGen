@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import "./App.css";
-import CustomCursor from "./components/customCursor";
+// import CustomCursor from "./components/customCursor";
 // import { Box } from "@chakra-ui/react";
 import Btn from "./components/elements/Btn";
 import Home from "./components/home/Home";
@@ -189,36 +189,6 @@ function App() {
       }}
     >
       <Box position="relative" ref={wrapper}>
-        {/* <Overlay /> */}
-        {/* <Flex
-          ref={nameWrapper}
-          position="absolute"
-          top="40%"
-          left="40%"
-          zIndex="1000"
-          border="2px solid white"
-        >
-          <Text
-            ref={name1}
-            color="white"
-            display="flex"
-            fontFamily="Shantell Sans"
-            fontWeight="800"
-            fontSize="25px"
-          >
-            Socio
-          </Text>
-          <Text
-            ref={name2}
-            display="flex"
-            fontFamily="Shantell Sans"
-            fontWeight="800"
-            fontSize="25px"
-            color="red"
-          >
-            Gen
-          </Text>
-        </Flex> */}
         <Box ref={overlayRef}>
           <Flex
             position="fixed"
@@ -260,7 +230,7 @@ function App() {
             h="100dvh"
           ></Box>
         </Box>
-        {isLargerThan700 ? <CustomCursor size="small" /> : null}
+        {/* {isLargerThan700 ? <CustomCursor size="small" /> : null} */}
         <Navbar />
         <Home />
         <About />

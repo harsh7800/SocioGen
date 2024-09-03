@@ -3,6 +3,9 @@ import mobile_illustration from "../../assets/mobile_illutration.jpg";
 import ui_ux_illustration from "../../assets/ui&ux_illutration.jpg";
 import marketing_illustration from "../../assets/marketing_illutration.jpg";
 import website_illustration from "../../assets/website_illutration.jpg";
+import smart_contract from "../../assets/smart_contract.jpg";
+import high_performance from "../../assets/high_performance.jpg";
+import blockchain from "../../assets/blockchain.jpg";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useContext, useEffect, useRef } from "react";
@@ -169,6 +172,38 @@ const Services = () => {
             description="
 Boost your brand's online presence with our expert social media marketing services. We create engaging content and strategic campaigns to connect you with your audience effectively. Elevate your digital strategy with us and achieve meaningful results."
           />
+          <Card
+            num="5"
+            reverse={false}
+            img={blockchain}
+            skill="Enterprise-Grade Blockchain"
+            description="
+ Harness the power of Hyperledger to build secure, scalable, and permissioned blockchain networks tailored to your enterprise needs.
+Supply Chain Management: Optimize and secure your supply chain operations with transparent, traceable, and tamper-proof blockchain solutions.
+Smart Contracts: Develop and deploy robust smart contracts that automate business processes with precision and reliability.
+Solana Development:
+."
+          />
+          <Card
+            num="6"
+            reverse={true}
+            img={high_performance}
+            skill="High-Performance DApps"
+            description="
+Leverage Solana’s unparalleled speed and low transaction costs to create decentralized applications that scale seamlessly.
+Token Development: Launch your custom tokens on Solana, designed for speed, efficiency, and easy integration with the growing Solana ecosystem.
+NFT Marketplaces: Build your own NFT marketplace on Solana, offering fast and affordable transactions for creators and collectors"
+          />
+          <Card
+            num="6"
+            reverse={false}
+            img={smart_contract}
+            skill="Smart Contracts & DApps"
+            description="
+Develop secure and versatile smart contracts on the world’s most popular blockchain platform, Ethereum, powering the decentralized web.
+DeFi Platforms: Launch and manage decentralized finance applications that bring innovation and accessibility to global financial systems.
+Layer 2 Solutions: Optimize your Ethereum-based applications with Layer 2 scaling solutions, ensuring lower costs and higher efficiency."
+          />
         </Flex>
       </Flex>
     </Flex>
@@ -213,6 +248,7 @@ const Card = ({ reverse, skill, description, img, num }) => {
         <Text
           fontSize={{ base: "20px", md: "25px", lg: "30px" }}
           fontFamily="Roboto"
+          // whiteSpace="nowrap"
           fontWeight="500"
           position="relative"
           // _after={{

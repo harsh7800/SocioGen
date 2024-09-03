@@ -497,7 +497,7 @@ const Contact = () => {
       <Flex
         onClick={() =>
           window.open(
-            "https://api.whatsapp.com/send/?phone=%2B918010193621&text&type=phone_number&app_absent=0",
+            "https://api.whatsapp.com/send/?phone=%2B919888678745&text&type=phone_number&app_absent=0",
             "_black"
           )
         }

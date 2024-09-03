@@ -25,7 +25,7 @@ import emailjs from "emailjs-com";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onOpen } = useDisclosure();
   const { headingRef, bannerImgRef, contactTitle, aboutTitle } =
     useContext(Context);
   const handleScrollToAbout = (ref) => {
@@ -183,7 +183,7 @@ const Home = () => {
         maxW={{ base: "auto", md: "400px", lg: "450px", xl: "45em" }}
         objectFit="contain"
       />
-      <EmailModal isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
+      {/* <EmailModal isOpen={isOpen} onClose={onClose} onOpen={onOpen} /> */}
     </Flex>
   );
 };
