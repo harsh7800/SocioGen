@@ -16,6 +16,7 @@ import Context from "./Context";
 import { useMediaQuery } from "@chakra-ui/react";
 // import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
+import IframeResizer from "iframe-resizer-react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -239,6 +240,12 @@ function App() {
         <Process />
         <TechStack />
         {/* <Career /> */}
+        {/* <Box> */}
+        <IframeResizer
+          src="https://embed-v2.testimonial.to/w/sociogen?theme=light&card=base&loadMore=on&initialCount=20&tag=all"
+          style={{ width: "1px", minWidth: "100%", height: "400px" }}
+        />
+        {/* </Box> */}
         <Contact />
       </Box>
     </Context.Provider>

@@ -1,5 +1,5 @@
-import { Box, Button, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
-import like from "../../assets/like.png";
+import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
+// import like from "../../assets/like.png";
 import react from "../../assets/techStack/React.png";
 import react_native from "../../assets/techStack/ReactNative.webp";
 import Nodejs from "../../assets/techStack/Nodejs.png";
@@ -115,7 +115,7 @@ const TechStack = () => {
   }, [interestRef, careerTitle, techRef, whyref]);
   return (
     <Box w="100svw" mt="2em">
-      <Flex
+      {/* <Flex
         bg="black"
         align="center"
         ref={interestRef}
@@ -141,7 +141,7 @@ const TechStack = () => {
         >
           Contact us
         </Button>
-      </Flex>
+      </Flex> */}
       <Flex align="center" justify="space-between" direction="column" mt="5em">
         <Text
           textAlign="center"

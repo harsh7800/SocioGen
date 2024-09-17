@@ -87,13 +87,13 @@ const Navbar = () => {
           >
             Process
           </Text>
-          <Text
+          {/* <Text
             onClick={() => handleScrollToAbout(careerTitle)}
             cursor="pointer"
             _hover={{ color: "red" }}
           >
             Careers
-          </Text>
+          </Text> */}
         </Flex>
       ) : null}
       {isLargerThan900 ? (
