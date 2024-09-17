@@ -135,7 +135,7 @@ const Contact = () => {
           y: "0",
 
           stagger: 0.1,
-          delay: 2,
+          delay: 1,
         }
       )
       .fromTo(
@@ -432,7 +432,16 @@ const Contact = () => {
           fontFamily="Manrope"
           color="white"
         >
-          S
+          G
+        </Text>
+
+        <Text
+          fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
+          fontWeight="500"
+          fontFamily="Manrope"
+          color="white"
+        >
+          L
         </Text>
 
         <Text
@@ -450,9 +459,8 @@ const Contact = () => {
           fontFamily="Manrope"
           color="white"
         >
-          C
+          R
         </Text>
-
         <Text
           fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
           fontWeight="500"
@@ -467,23 +475,7 @@ const Contact = () => {
           fontFamily="Manrope"
           color="white"
         >
-          O
-        </Text>
-        <Text
-          fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
-          fontWeight="500"
-          fontFamily="Manrope"
-          color="white"
-        >
-          G
-        </Text>
-        <Text
-          fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
-          fontWeight="500"
-          fontFamily="Manrope"
-          color="white"
-        >
-          E
+          A
         </Text>
         <Text
           fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
@@ -492,6 +484,22 @@ const Contact = () => {
           color="white"
         >
           N
+        </Text>
+        <Text
+          fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
+          fontWeight="500"
+          fontFamily="Manrope"
+          color="white"
+        >
+          T
+        </Text>
+        <Text
+          fontSize={{ base: "4em", sm: "7em", md: "10em", lg: "13em" }}
+          fontWeight="500"
+          fontFamily="Manrope"
+          color="white"
+        >
+          S
         </Text>
       </Flex>
       <Flex

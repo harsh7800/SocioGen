@@ -3,14 +3,16 @@ import like from "../../assets/like.png";
 import react from "../../assets/techStack/React.png";
 import react_native from "../../assets/techStack/ReactNative.webp";
 import Nodejs from "../../assets/techStack/Nodejs.png";
-import Sass from "../../assets/techStack/Sass.png";
-import Html from "../../assets/techStack/Html.png";
-import Css from "../../assets/techStack/Css.jpg";
+// import Sass from "../../assets/techStack/Sass.png";
+// import Html from "../../assets/techStack/Html.png";
+// import Css from "../../assets/techStack/Css.jpg";
 import Nextjs from "../../assets/techStack/Next.png";
 import Expressjs from "../../assets/techStack/Express.png";
 import Github from "../../assets/techStack/GitHub.png";
 import Slack from "../../assets/techStack/Slack.png";
 import JS from "../../assets/techStack/JS.png";
+import Solana from "../../assets/techStack/Solana_logo.png";
+import Solidity from "../../assets/techStack/solidity.png";
 import Map from "../../assets/map.png";
 import { useMediaQuery } from "@chakra-ui/react";
 import { useContext, useEffect, useRef } from "react";
@@ -162,9 +164,11 @@ const TechStack = () => {
           <Img w={["8em", "12em"]} src={Nodejs} />
           <Img w={["5em", "7em"]} src={Expressjs} />
           <Img w={["6em", "8em"]} src={Nextjs} />
-          <Img w={["5em", "7em"]} src={Sass} />
-          <Img w={["4em", "7em"]} src={Html} />
-          <Img w={["4em", "7em"]} src={Css} />
+          <Img w={["6em", "8em"]} src={Solana} />
+          <Img w={["6em", "8em"]} src={Solidity} />
+          {/* <Img w={["5em", "7em"]} src={Sass} /> */}
+          {/* <Img w={["4em", "7em"]} src={Html} /> */}
+          {/* <Img w={["4em", "7em"]} src={Css} /> */}
           <Img w={["4em", "7em"]} src={JS} />
           <Img w="7em" src={Github} />
           <Img w={["5em", "7em"]} src={Slack} />
@@ -179,7 +183,7 @@ const TechStack = () => {
               fontFamily="Poppins"
               textAlign="center"
             >
-              Why Socio<span style={{ color: "red" }}>Gen</span> ?
+              Why <span style={{ color: "red" }}>Gloriants</span> ?
             </Text>
             <Img w="100%" objectFit="contain" src={Map} />
             {/* <Box

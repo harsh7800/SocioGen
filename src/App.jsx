@@ -10,7 +10,7 @@ import Services from "./components/services/Services";
 import { useContext, useEffect, useRef, useState } from "react";
 import Process from "./components/process/Process";
 import TechStack from "./components/technologies/TechStack";
-import Career from "./components/carrer/Career";
+// import Career from "./components/carrer/Career";
 import Contact from "./components/contact/Contact";
 import Context from "./Context";
 import { useMediaQuery } from "@chakra-ui/react";
@@ -34,7 +34,7 @@ function App() {
   const contactTitle = useRef();
   const careerTitle = useRef();
   const name1 = useRef();
-  const name2 = useRef();
+  // const name2 = useRef();
   const hamburgerRef = useRef();
   // const nameWrapper = useRef();
 
@@ -62,14 +62,14 @@ function App() {
         ease: "Power.Out",
         duration: 0.5,
       })
-      .to(name2.current, {
-        x: 0,
-        opacity: 1,
-        delay: 0.5,
-        ease: "Power.Out",
-        duration: 0.5,
-      })
-      .to([name1.current, name2.current], {
+      // .to(name2.current, {
+      //   x: 0,
+      //   opacity: 1,
+      //   delay: 0.5,
+      //   ease: "Power.Out",
+      //   duration: 0.5,
+      // })
+      .to([name1.current], {
         opacity: 0,
         ease: "Power.Out",
         duration: 0.5,
@@ -208,9 +208,9 @@ function App() {
               fontWeight="800"
               fontSize="25px"
             >
-              Socio
+              Gloriants
             </Text>
-            <Text
+            {/* <Text
               opacity="0"
               transform="translateX(-50px)"
               ref={name2}
@@ -220,7 +220,7 @@ function App() {
               fontSize="25px"
             >
               Gen
-            </Text>
+            </Text> */}
           </Flex>
           <Box
             position="fixed"
@@ -238,7 +238,7 @@ function App() {
         <Services />
         <Process />
         <TechStack />
-        <Career />
+        {/* <Career /> */}
         <Contact />
       </Box>
     </Context.Provider>

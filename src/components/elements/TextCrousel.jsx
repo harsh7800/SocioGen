@@ -11,13 +11,7 @@ const TextCrousel = () => {
       text2: text2.current,
     };
 
-    const texts = [
-      "Block Chain and Solana",
-      "Hyperledger Solutions",
-      "Web Solutions",
-      "Mobile Applications",
-      "Ui&UX Designs",
-    ];
+    const texts = ["Block Chain ", "Hyperledger Solutions", "Solana Solutions"];
 
     const morphTime = 1;
     const cooldownTime = 0.75;

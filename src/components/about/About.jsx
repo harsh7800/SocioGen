@@ -135,7 +135,7 @@ const About = () => {
           w={{ base: "100svw", lg: "80svw" }}
           textAlign="center"
         >
-          We at <Link color="red">SocioGen</Link> provide you one-stop solution
+          We at <Link color="red">Gloriants</Link> provide you one-stop solution
           that perfectly align with your needs
         </Text>
       </Flex>

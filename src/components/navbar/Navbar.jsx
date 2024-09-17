@@ -53,8 +53,8 @@ const Navbar = () => {
         fontWeight="800"
         fontSize="25px"
       >
-        <span>Socio</span>
-        <span style={{ color: "red" }}>Gen</span>
+        {/* <span>Gloriants</span> */}
+        <span style={{ color: "red" }}>Gloriants</span>
       </Text>
       {isLargerThan900 ? (
         <Flex

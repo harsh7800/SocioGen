@@ -1,8 +1,8 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
-import mobile_illustration from "../../assets/mobile_illutration.jpg";
-import ui_ux_illustration from "../../assets/ui&ux_illutration.jpg";
-import marketing_illustration from "../../assets/marketing_illutration.jpg";
-import website_illustration from "../../assets/website_illutration.jpg";
+// import mobile_illustration from "../../assets/mobile_illutration.jpg";
+// import ui_ux_illustration from "../../assets/ui&ux_illutration.jpg";
+// import marketing_illustration from "../../assets/marketing_illutration.jpg";
+// import website_illustration from "../../assets/website_illutration.jpg";
 import smart_contract from "../../assets/smart_contract.jpg";
 import high_performance from "../../assets/high_performance.jpg";
 import blockchain from "../../assets/blockchain.jpg";
@@ -141,7 +141,7 @@ const Services = () => {
           w="100svw"
           ref={serviceRef}
         >
-          <Card
+          {/* <Card
             num="1"
             reverse={false}
             img={website_illustration}
@@ -171,9 +171,9 @@ const Services = () => {
             skill="Social Media Marketing"
             description="
 Boost your brand's online presence with our expert social media marketing services. We create engaging content and strategic campaigns to connect you with your audience effectively. Elevate your digital strategy with us and achieve meaningful results."
-          />
+          /> */}
           <Card
-            num="5"
+            num="1"
             reverse={false}
             img={blockchain}
             skill="Enterprise-Grade Blockchain"
@@ -185,7 +185,7 @@ Solana Development:
 ."
           />
           <Card
-            num="6"
+            num="2"
             reverse={true}
             img={high_performance}
             skill="High-Performance DApps"
@@ -195,7 +195,7 @@ Token Development: Launch your custom tokens on Solana, designed for speed, effi
 NFT Marketplaces: Build your own NFT marketplace on Solana, offering fast and affordable transactions for creators and collectors"
           />
           <Card
-            num="6"
+            num="3"
             reverse={false}
             img={smart_contract}
             skill="Smart Contracts & DApps"
