@@ -13,9 +13,8 @@ import Contact_illustration from "../../assets/form_illustration.jpg";
 import { useMediaQuery } from "@chakra-ui/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState, useTransition } from "react";
 import Context from "../../Context";
-import emailjs from "emailjs-com";
 
 gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
@@ -43,34 +42,26 @@ const Contact = () => {
   const form = useRef();
 
   const emailContents = {
-    firstname: firstName,
-    lastname: lastName,
+    name: `${firstName} ${lastName}`,
     email: Email,
     phoneNumber: phoneNum,
     message: message,
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .send(
-        "service_326pvig",
-        "template_vr4dvyf",
-        emailContents,
-        "DGyFBPxebdpPb8MEf"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Messaage Sent Successfully");
-          // window.location.reload();
-        },
-        (error) => {
-          alert(error.text);
-        }
-      );
-    form.current.reset();
-  };
+  const [isLoading, handleSendingEmail] = useTransition();
+
+  async function SendMail() {
+    console.log(1);
+    handleSendingEmail(async () => {
+      const response = await fetch(`http://localhost:3000/api/contact`, {
+        method: "POST",
+        body: JSON.stringify(emailContents),
+      });
+      const data = await response.json();
+      console.log(data);
+    });
+  }
+
   useEffect(() => {
     gsap.fromTo(
       contactTitle.current,
@@ -194,6 +185,7 @@ const Contact = () => {
         }
       );
   }, [contactTitle, ImageRef, subheadingRef]);
+
   return (
     <Box
       justify="center"
@@ -261,7 +253,10 @@ const Contact = () => {
         <Flex
           as="form"
           ref={form}
-          onSubmit={sendEmail}
+          onSubmit={(e) => {
+            e.preventDefault();
+            SendMail();
+          }}
           direction="column"
           h={{ base: "fit-content", lg: "40em" }}
           py={{ base: "2em", lg: "0" }}
@@ -401,7 +396,8 @@ const Contact = () => {
               lastName === "" ||
               message === "" ||
               email === "" ||
-              !Email.endsWith(".com")
+              !Email.endsWith(".com") ||
+              isLoading
             }
             value="Send"
             type="submit"
@@ -421,7 +417,7 @@ const Contact = () => {
                 : 1
             }
           >
-            Submit
+            {isLoading ? "Sending..." : "Submit"}
           </Button>
         </Flex>
       </Flex>

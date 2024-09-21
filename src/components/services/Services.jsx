@@ -177,32 +177,101 @@ Boost your brand's online presence with our expert social media marketing servic
             reverse={false}
             img={blockchain}
             skill="Enterprise-Grade Blockchain"
-            description="
- Harness the power of Hyperledger to build secure, scalable, and permissioned blockchain networks tailored to your enterprise needs.
-Supply Chain Management: Optimize and secure your supply chain operations with transparent, traceable, and tamper-proof blockchain solutions.
-Smart Contracts: Develop and deploy robust smart contracts that automate business processes with precision and reliability.
-Solana Development:
-."
+            description={
+              <ul
+                style={{
+                  listStyleType: "disc",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 5,
+                }}
+              >
+                <li>
+                  • Harness the power of Hyperledger to build secure, scalable,
+                  and permissioned blockchain networks tailored to your
+                  enterprise needs.
+                </li>
+                <li>
+                  • Supply Chain Management: Optimize and secure your supply
+                  chain operations with transparent, traceable, and tamper-proof
+                  blockchain solutions.
+                </li>
+                <li>
+                  • Smart Contracts: Develop and deploy robust smart contracts
+                  that automate business processes with precision and
+                  reliability.
+                </li>
+                <li>
+                  • Solana Development: Build high-performance decentralized
+                  applications on the Solana blockchain for speed and
+                  efficiency.
+                </li>
+              </ul>
+            }
           />
           <Card
             num="2"
             reverse={true}
             img={high_performance}
             skill="High-Performance DApps"
-            description="
-Leverage Solana’s unparalleled speed and low transaction costs to create decentralized applications that scale seamlessly.
-Token Development: Launch your custom tokens on Solana, designed for speed, efficiency, and easy integration with the growing Solana ecosystem.
-NFT Marketplaces: Build your own NFT marketplace on Solana, offering fast and affordable transactions for creators and collectors"
+            description={
+              <ul
+                style={{
+                  listStyleType: "disc",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 5,
+                }}
+              >
+                <li>
+                  • Leverage Solana’s unparalleled speed and low transaction
+                  costs to create decentralized applications that scale
+                  seamlessly.
+                </li>
+                <li>
+                  • Token Development: Launch your custom tokens on Solana,
+                  designed for speed, efficiency, and easy integration with the
+                  growing Solana ecosystem.
+                </li>
+                <li>
+                  • NFT Marketplaces: Build your own NFT marketplace on Solana,
+                  offering fast and affordable transactions for creators and
+                  collectors.
+                </li>
+              </ul>
+            }
           />
           <Card
             num="3"
             reverse={false}
             img={smart_contract}
             skill="Smart Contracts & DApps"
-            description="
-Develop secure and versatile smart contracts on the world’s most popular blockchain platform, Ethereum, powering the decentralized web.
-DeFi Platforms: Launch and manage decentralized finance applications that bring innovation and accessibility to global financial systems.
-Layer 2 Solutions: Optimize your Ethereum-based applications with Layer 2 scaling solutions, ensuring lower costs and higher efficiency."
+            description={
+              <ul
+                style={{
+                  listStyleType: "disc",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 5,
+                }}
+              >
+                <li>
+                  • Develop secure and versatile smart contracts on the world’s
+                  most popular blockchain platform, Ethereum, powering the
+                  decentralized web.
+                </li>
+                <li>
+                  • DeFi Platforms: Launch and manage decentralized finance
+                  applications that bring innovation and accessibility to global
+                  financial systems.
+                </li>
+                <li>
+                  • Layer 2 Solutions: Optimize your Ethereum-based applications
+                  with Layer 2 scaling solutions, ensuring lower costs and
+                  higher efficiency.
+                </li>
+              </ul>
+            }
           />
         </Flex>
       </Flex>
@@ -226,6 +295,7 @@ const Card = ({ reverse, skill, description, img, num }) => {
   return (
     <Flex
       justify={{ base: "center", lg: "space-between" }}
+      gap={!reverse && 5}
       w={{ base: "900svw", lg: "80svw", xl: "60svw" }}
       align="center"
       flexDirection={{
@@ -265,16 +335,16 @@ const Card = ({ reverse, skill, description, img, num }) => {
           <span style={{ color: "red" }}>{num}.&nbsp;</span>
           {skill}
         </Text>
-        <Text
+        <Box
           mt="1em"
-          fontSize={{ base: "15px", lg: "18px" }}
+          fontSize={{ base: "12px", lg: "15px" }}
           fontFamily="Open Sans"
-          textAlign="justify"
+          textAlign="left"
           fontWeight="600"
           opacity={{ base: 0.7, lg: 1 }}
         >
           {description}
-        </Text>
+        </Box>
       </Box>
     </Flex>
   );
